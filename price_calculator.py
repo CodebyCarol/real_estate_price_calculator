@@ -23,5 +23,5 @@ class PriceCalculator:
             raise ValueError("no such district")
         if squaremeter < 1:
             raise ValueError("squaremeter should be above 0")
-        return cls.AVG_SQM_PRICE * squaremeter * cls.DISTRICT_WEIGHT[district]
+        return int(cls.AVG_SQM_PRICE * squaremeter * cls.DISTRICT_WEIGHT[district])
         
