@@ -13,16 +13,6 @@ class PriceCalculatorTest(unittest.TestCase):
     def test_zero_squaremeter(self):
         self.assertRaises(ValueError, PriceCalculator.calculate, 1, 0)
 
-    def test_status_code_400(self):
-        pass
-
-    def test_status_code_200(self):
-        pass
-
-    def test_response_is_json(self):
-        pass    
-
-
 
 if __name__ == "__main__":
     unittest.main()        
