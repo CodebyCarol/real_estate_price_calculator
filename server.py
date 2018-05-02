@@ -10,7 +10,7 @@ def calculate_price(district, squaremeters):
     try:
         result = json.dumps({'price': PriceCalculator.calculate(district, squaremeters)})
     except ValueError as e:
-        result = json.dumps({'error': str(e)})
+        result = (json.dumps({'error': str(e)}), 400)
     return result
 
 
