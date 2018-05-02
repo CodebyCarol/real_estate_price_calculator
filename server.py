@@ -7,7 +7,11 @@ app = Flask(__name__)
 
 @app.route("/calculate_price/<int:district>/<int:squaremeters>")
 def calculate_price(district, squaremeters):
-    return json.dumps({'price': PriceCalculator.calculate(district, squaremeters)})
+    try:
+        result = json.dumps({'price': PriceCalculator.calculate(district, squaremeters)})
+    except ValueError as e:
+        result = json.dumps({'error': str(e)})
+    return result
 
 
 if __name__ == "__main__":
